@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<title>Iceland</title>
+	<script src="node_modules/angular/angular.js"></script>
+	<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css">
+	<script src="app.js"></script>
+	<script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+</head>
+<body ng-controller="main">
+<div class="jumbotron" align="center">
+	<h1>Fly Iceland</h1>
+	<p>List of international flights departing and arriving at Keflavik Airport today.
+	</p>
+</div>
+
+
+<div class="col-xs-6 col-md-6">
+	<div class="panel panel-primary">
+  		<div class="panel-heading">DEPARTURES</div>
+		      <table class="table table-condensed table-hover">
+		        <thead>
+		          <tr>
+		            <th width="15%">Time</th>
+		            <th width="45%">To</th>
+		            <th width="20%">Flight No.</th>
+		            <th width="20%">Airline</th>
+		          </tr>
+		        </thead>
+		        <tbody ng-repeat="flight in dep">
+		          <tr>
+		            <td>{{flight.plannedArrival}}</td>
+		            <td>{{flight.to}}</td>
+		            <td>{{flight.flightNumber}}</td>
+		            <td>{{flight.airline}}</td>
+		          </tr>
+		        </tbody>
+		      </table>
+	</div>
+</div>
+
+<div class="col-xs-6 col-md-6">
+	<div class="panel panel-primary">
+  		<div class="panel-heading">ARRIVALS</div>
+		      <table class="table table-condensed table-hover">
+		        <thead>
+		          <tr>
+		            <th width="15%">Time</th>
+		            <th width="45%">To</th>
+		            <th width="20%">Flight No.</th>
+		            <th width="20%">Airline</th>
+		          </tr>
+		        </thead>
+		        <tbody ng-repeat="flight in arv">
+		          <tr>
+		            <td>{{flight.plannedArrival}}</td>
+		            <td>{{flight.from}}</td>
+		            <td>{{flight.flightNumber}}</td>
+		            <td>{{flight.airline}}</td>
+		          </tr>
+		        </tbody>
+		      </table>
+	</div>
+</div>
+
+</body>
+</html>
